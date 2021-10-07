@@ -1,0 +1,12 @@
+
+<launch>
+
+    <arg name="path" default="$(find aqua_talker)/wav/"/>
+
+    <node pkg="aqua_talker" name="aqua_talker" type="aqua_talker" output="screen" respawn="true">
+        <param name="sound1" value="$(arg path)obutuhasyoudokuda.wav"/>
+        <param name="sound2" value="$(arg path)mitiwoakero.wav"/>
+        <param name="debug" value="true"/>
+    </node>
+
+</launch>
