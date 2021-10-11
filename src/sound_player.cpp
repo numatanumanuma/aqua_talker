@@ -79,6 +79,7 @@ void SoundPlayer::publishGoal() {
 
 void SoundPlayer::cancel() {
     sound_play::SoundRequest request;
+    request.sound = -1;
     request.command = 0;
     request_pub_.publish(request);
     ros::Rate loop_rate(10);

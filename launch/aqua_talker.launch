@@ -4,9 +4,15 @@
     <arg name="path" default="$(find aqua_talker)/wav/"/>
 
     <node pkg="aqua_talker" name="aqua_talker" type="aqua_talker" output="screen" respawn="true">
-        <param name="sound1" value="$(arg path)obutuhasyoudokuda.wav"/>
-        <param name="sound2" value="$(arg path)mitiwoakero.wav"/>
+        <param name="sound1" value="$(arg path)Daydream_cafe.wav"/>
+        <param name="sound2" value="$(arg path)cocoa_scream.wav"/>
         <param name="debug" value="true"/>
     </node>
+
+    <node pkg="sound_play" name="sound_play" type="soundplay_node.py" output="screen" respawn="true"/>
+
+    <param name="use_sim_time" value="true"/>
+	<!-- <node pkg="rosbag" type="play" name="player" args="&#45;&#45;clock &#45;r 1.0 &#45;s 380 $(arg cam) $(arg tf) $(arg scan)"/> -->
+	<node pkg="rosbag" type="play" name="player" args="-l /home/suzuki-t/movebase_sample_20211009.bag"/>
 
 </launch>
